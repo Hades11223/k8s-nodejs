@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: hades1122/test:nodejs:$BUILD_NUMBER
+        image: hades1122/testnodejs:$BUILD_NUMBER
         ports:
         - containerPort: 3000
         
