@@ -12,7 +12,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/Hades11223/playjenkins.git'
+        git 'https://github.com/Hades11223/k8s-nodejs.git'
       }
     }
 
@@ -37,7 +37,7 @@ pipeline {
     stage('Deploy K8s App') {
       steps {
         script {
-          kubernetesDeploy(configs: "myweb.yaml", kubeconfigId: "mykubeconfig")
+          kubernetesDeploy(configs: "nodejs.yaml", kubeconfigId: "mykubeconfig")
         }
       }
     }
