@@ -19,7 +19,7 @@ pipeline {
     stage('Build image') {
       steps{
         script {
-          dockerImage = docker.build registry + "nodejs" + ":$BUILD_NUMBER"
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
     }
@@ -45,7 +45,7 @@ pipeline {
 
     stage('Remove Unused docker image') {
       steps{
-        sh "docker rmi $registry + "nodejs" + ":$BUILD_NUMBER""
+        sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
   
